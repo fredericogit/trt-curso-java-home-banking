@@ -1,6 +1,7 @@
 package homebanking;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  *
@@ -8,20 +9,21 @@ import java.util.List;
  */
 public abstract class Conta {
 
-    private String id;
+    private final String id;
 
     private double saldo;
 
-    private Cliente cliente;
+    private final Cliente cliente;
 
     private List<Movimentacao> movimetacoes;
 
-    public String getId() {
-        return id;
+    public Conta(Cliente cliente) {
+        this.id = UUID.randomUUID().toString();
+        this.cliente = cliente;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getId() {
+        return id;
     }
 
     public double getSaldo() {
@@ -34,10 +36,6 @@ public abstract class Conta {
 
     public Cliente getCliente() {
         return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     public List<Movimentacao> getMovimetacoes() {

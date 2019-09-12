@@ -6,14 +6,15 @@ package homebanking;
  */
 public class ContaInvestimento extends Conta {
 
-    private TipoDeAplicacao tipoDeAplicacao;
+    private final TipoDeAplicacao tipoDeAplicacao;
+
+    public ContaInvestimento(TipoDeAplicacao tipoDeAplicacao, Cliente cliente) {
+        super(cliente);
+        this.tipoDeAplicacao = tipoDeAplicacao;
+    }
 
     public TipoDeAplicacao getTipoDeAplicacao() {
         return tipoDeAplicacao;
-    }
-
-    public void setTipoDeAplicacao(TipoDeAplicacao tipoDeAplicacao) {
-        this.tipoDeAplicacao = tipoDeAplicacao;
     }
 
 }
